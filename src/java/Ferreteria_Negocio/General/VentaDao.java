@@ -23,61 +23,6 @@ import java.util.List;
  */
 public class VentaDao{
 
-    public List<FormaPago> ListarFormapago() {
-        
-        Conexion conn = Configuracion.Datos();
-        String sql = "select id_forma_pago,initcap(nombre) as nombre from forma_pago ";
-        List<FormaPago> lista = new ArrayList<FormaPago>();
-        FormaPago tp= null;
-            conn.execQuery(sql);
-            while (conn.getNext()) {                    
-                tp = new FormaPago();              
-                tp.setIdFormaPago(conn.getCol("id_forma_pago"));
-                tp.setNombre(conn.getCol("nombre"));           
-                lista.add(tp); 
-            }
-        conn.Close(1, 1, 1);
-        return lista; 
-    }
-
-    public List<Comprobante> ListarCompVenta() {
-        
-        Conexion conn = Configuracion.Datos();
-        String sql = "select id_configuracion as id,nombre_comp(id_comprobante) as nombre " +
-                     "from comprobante_config where estado='1'";
-        List<Comprobante> lista = new ArrayList<Comprobante>();
-        Comprobante comp= null;
-            conn.execQuery(sql);
-            while (conn.getNext()) {                    
-                comp = new Comprobante();              
-                comp.setIdComprobante(conn.getCol("id"));
-                comp.setNombreComprobante(conn.getCol("nombre"));           
-                lista.add(comp);   
-            }  
-        conn.Close(1, 1, 1);
-        return lista; 
-        
-        
-    }
-
-    public List<TipoMoneda> ListarMoneda() {
-        
-        Conexion conn = Configuracion.Datos();
-        String sql = "select id_moneda,initcap(nombre) as nombre, valor_actual from tipo_moneda ";
-        List<TipoMoneda> lista = new ArrayList<TipoMoneda>();
-        TipoMoneda tm= null;
-            conn.execQuery(sql);
-            while (conn.getNext()) {                    
-                tm = new TipoMoneda();              
-                tm.setIdMoneda(conn.getCol("id_moneda"));
-                tm.setNombre(conn.getCol("nombre")); 
-                tm.setValorActual(Double.parseDouble(conn.getCol("valor_actual")));
-                lista.add(tm);   
-            }  
-        conn.Close(1, 1, 1);
-        return lista; 
-    }
-
     public boolean IniciarVenta(String id_config) {
         
         Conexion conn = Configuracion.Datos();

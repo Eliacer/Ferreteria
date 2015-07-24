@@ -3,6 +3,7 @@ package Ferreteria_Entidad.Entidad;
 public class Persona {
 
 
+     private int nro;
      private String id_persona="";
      private String id_tipo_doc="";
      private String nombres="";
@@ -16,6 +17,7 @@ public class Persona {
      private String ruc="";
      private String direccion="";
      private String estado;
+     private String buscar="";
      
      //Solo para Reportes...
      private String usuario="";
@@ -27,6 +29,14 @@ public class Persona {
         
     }
 
+    public int getNro() {
+        return nro;
+    }
+
+    public void setNro(int nro) {
+        this.nro = nro;
+    }
+    
     public String getId_persona() {
         return id_persona;
     }
@@ -161,6 +171,14 @@ public class Persona {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public String getBuscar() {
+        return buscar;
+    }
+
+    public void setBuscar(String buscar) {
+        this.buscar = buscar;
     }
 
     

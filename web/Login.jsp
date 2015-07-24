@@ -31,7 +31,7 @@
                                     <img src="imag/manzana.png" height="80"/>
                                 </td>
                                 <td>
-                                    <s:form name="form" action="Logeo" method="post" >
+                                    <s:form name="form" action="Logeo" method="get" >
                                         <s:textfield name="Usuario.login" maxLength="25" label="Usuario" size="20"/>
                                         <s:password name="Usuario.password" maxLength="25" label="Clave" size="20"/>
                                         <s:submit name="ingresar" value="Ingresar" align="center" title="Ingresar"/>

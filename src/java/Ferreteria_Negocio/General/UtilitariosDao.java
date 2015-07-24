@@ -5,10 +5,12 @@
  */
 package Ferreteria_Negocio.General;
 
+import Ferreteria_Entidad.Entidad.CatCliente;
 import Ferreteria_Entidad.Entidad.Categoria;
 import Ferreteria_Entidad.Entidad.Comprobante;
 import Ferreteria_Entidad.Entidad.FormaPago;
 import Ferreteria_Entidad.Entidad.Marca;
+import Ferreteria_Entidad.Entidad.TipoDocumento;
 import Ferreteria_Entidad.Entidad.TipoMoneda;
 import Ferreteria_Entidad.Entidad.Ubicacion;
 import Ferreteria_Entidad.Entidad.UndMedida;
@@ -22,6 +24,60 @@ import java.util.List;
  */
 public class UtilitariosDao {
     
+    public List<TipoDocumento> ReporteTipoDocumento() {
+    
+        Conexion conn = Configuracion.Datos();
+        String sql = "select id_tipo_doc,initcap(nombre)as nombre from tipo_documento where estado='1' ";
+        List<TipoDocumento> lista = new ArrayList<TipoDocumento>();
+        TipoDocumento td= null;
+            conn.execQuery(sql);
+            while (conn.getNext()) {                    
+                td = new TipoDocumento();              
+                td.setId_tipo_doc(conn.getCol("id_tipo_doc"));
+                td.setNombre(conn.getCol("nombre")); 
+                lista.add(td);   
+            }  
+        conn.Close(1, 1, 1);
+        return lista; 
+    }
+    public List<CatCliente> ListarCatCliente() {
+        
+        Conexion conn = Configuracion.Datos();
+        String sql = "select id_categoria,initcap(nombre) as nombre, dcto from cat_cliente ";
+        List<CatCliente> lista = new ArrayList<CatCliente>();
+        CatCliente catc= null;
+            conn.execQuery(sql);
+            while (conn.getNext()) {                    
+                catc = new CatCliente();              
+                catc.setIdCategoria(conn.getCol("id_categoria"));
+                catc.setNombre(conn.getCol("nombre")); 
+                catc.setDescuento(Double.parseDouble(conn.getCol("dcto")));
+                lista.add(catc);   
+            }  
+        conn.Close(1, 1, 1);
+        return lista; 
+    }
+
+    public List<Comprobante> ReporteCompVenta() 
+    {
+        
+        Conexion conn = Configuracion.Datos();
+        String sql = "select id_configuracion as id,nombre_comp(id_comprobante) as nombre " +
+                     "from comprobante_config where estado='1'";
+        List<Comprobante> lista = new ArrayList<Comprobante>();
+        Comprobante comp= null;
+            conn.execQuery(sql);
+            while (conn.getNext()) {                    
+                comp = new Comprobante();              
+                comp.setIdComprobante(conn.getCol("id"));
+                comp.setNombreComprobante(conn.getCol("nombre"));           
+                lista.add(comp);   
+            }  
+        conn.Close(1, 1, 1);
+        return lista; 
+        
+        
+    }
     public List<Comprobante> ReporteComprobante() {
         
         Conexion conn = Configuracion.Datos();
@@ -152,6 +208,7 @@ public class UtilitariosDao {
             return false;
         }
     }
+    
     public List<FormaPago> ReporteFormapago() {
         
         Conexion conn = Configuracion.Datos();

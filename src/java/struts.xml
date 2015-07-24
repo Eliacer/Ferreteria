@@ -28,22 +28,22 @@
         
         <!-- Categoria de productos-->
         <action name="Categoria" class="Ferreteria_Controler.UtilitariosControler" method="Reporte">
-            <result name="fin">categoria.jsp</result>
+            <result name="fin">Categoria.jsp</result>
         </action>
         <action name="NuevaCategoria" class="Ferreteria_Controler.UtilitariosControler" method="NuevaCategoria">
-            <result name="fin">categoria.jsp</result>
+            <result name="fin">Categoria.jsp</result>
         </action>
         <action name="AgregarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="AgregarCategoria">
-            <result name="fin">categoria.jsp</result>
+            <result name="fin">Categoria.jsp</result>
         </action>
         <action name="EliminarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="EliminarCategoria">
-            <result name="fin">categoria.jsp</result>
+            <result name="fin">Categoria.jsp</result>
         </action>
         <action name="EditarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="EditarCategoria">
-            <result name="fin">categoria.jsp</result>
+            <result name="fin">Categoria.jsp</result>
         </action>
         <action name="ActualizarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="ActualizarCategoria">
-            <result name="fin">categoria.jsp</result>
+            <result name="fin">Categoria.jsp</result>
         </action>
         
         <!-- Categoria de clientes-->
@@ -68,22 +68,42 @@
         
         <!-- Producto-->
         <action name="Producto" class="Ferreteria_Controler.ProductoControler" method="Reporte">
-            <result name="fin">producto.jsp</result>
+            <result name="fin">Producto.jsp</result>
         </action>
         <action name="NuevoProducto" class="Ferreteria_Controler.ProductoControler" method="NuevoProducto">
-            <result name="fin">producto.jsp</result>
+            <result name="fin">Producto.jsp</result>
         </action>
         <action name="AgregarProducto" class="Ferreteria_Controler.ProductoControler" method="AgregarProducto">
-            <result name="fin">producto.jsp</result>
+            <result name="fin">Producto.jsp</result>
         </action>
         <action name="EliminarProducto" class="Ferreteria_Controler.ProductoControler" method="EliminarProducto">
-            <result name="fin">producto.jsp</result>
+            <result name="fin">Producto.jsp</result>
         </action>
         <action name="EditarProducto" class="Ferreteria_Controler.ProductoControler" method="EditarProducto">
-            <result name="fin">producto.jsp</result>
+            <result name="fin">Producto.jsp</result>
         </action>
         <action name="ActualizarProducto" class="Ferreteria_Controler.ProductoControler" method="ActualizarProducto">
-            <result name="fin">producto.jsp</result>
+            <result name="fin">Producto.jsp</result>
+        </action>
+        
+        <!-- Persona-->
+        <action name="Persona" class="Ferreteria_Controler.PersonaControler" method="Reporte">
+            <result name="fin">Persona.jsp</result>
+        </action>
+        <action name="NuevaPersona" class="Ferreteria_Controler.PersonaControler" method="NuevaPersona">
+            <result name="fin">Persona.jsp</result>
+        </action>
+        <action name="RegistrarPersona" class="Ferreteria_Controler.PersonaControler" method="RegistrarPersona">
+            <result name="fin">Persona.jsp</result>
+        </action>
+        <action name="EliminarPersona" class="Ferreteria_Controler.PersonaControler" method="EliminarPersona">
+            <result name="fin">Persona.jsp</result>
+        </action>
+        <action name="EditarPersona" class="Ferreteria_Controler.PersonaControler" method="EditarPersona">
+            <result name="fin">Persona.jsp</result>
+        </action>
+        <action name="ActualizarPersona" class="Ferreteria_Controler.PersonaControler" method="ActualizarPersona">
+            <result name="fin">Persona.jsp</result>
         </action>
     </package>
 </struts>

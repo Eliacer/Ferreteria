@@ -10,29 +10,13 @@ public class Usuario  implements java.io.Serializable {
 
 
      private String idUsuario="";
-     private String login="";
-     private String password="";
+     private String login;
+     private String password;
      private String idRol="";
      private String estado="";
 
     public Usuario() {
     }
-
-	
-    public Usuario(String idUsuario, String login, String password, String estado) {
-        this.idUsuario = idUsuario;
-        this.login = login;
-        this.password = password;
-        this.estado = estado;
-    }
-    public Usuario(String idUsuario, String login, String password, String idRol, String estado) {
-       this.idUsuario = idUsuario;
-       this.login = login;
-       this.password = password;
-       this.idRol = idRol;
-       this.estado = estado;
-    }
-   
     public String getIdUsuario() {
         return this.idUsuario;
     }

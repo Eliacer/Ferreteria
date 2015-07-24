@@ -119,12 +119,13 @@ public class ProductoDao{
                      + "from producto p, marca m, ubicacion u,unidad_medida um "
                      + "where m.id_marca=nvl(p.id_marca,'00001') and "
                      + "u.id_ubicacion=nvl(p.id_ubicacion,'00001') and um.id_unidad_medida=p.id_unidad_medida and "
-                     + "upper(p.nombre||m.nombre_marca||um.abreviatura||p.precio||p.stock_actual||u.nombre_ubicacion||p.porc_ganancia) like upper('%"+pr.getBuscar()+"%') order by nombre asc";   
-        
+                     + "upper(p.nombre||m.nombre_marca||um.abreviatura||p.precio||p.stock_actual||u.nombre_ubicacion||p.porc_ganancia) like upper('%"+pr.getNombre()+"%') order by nombre asc";   
+        int nro = 1;
         conn.execQuery(query);
             while (conn.getNext()) { 
                 Producto producto= new Producto();
                 producto.setId_producto(conn.getCol("id_producto"));
+                producto.setNro(nro++);
                 producto.setNombre(conn.getCol("producto"));
                 producto.setId_marca(conn.getCol("marca"));
                 producto.setPorc_ganacia(Double.parseDouble(conn.getCol("pgan")));

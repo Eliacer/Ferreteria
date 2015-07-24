@@ -291,10 +291,10 @@ function RegistrarEntrada()
 
 
 /* Validar Persona*/
-function nombres_persona(form) {
+function nombres(form) {
     var valor;
     if(form.nombres.value==0)	{
-        msj('e_resul','* Ingrese nombres');
+        msj('e_resul','* Ingrese el nombre de la persona.');
         form.nombres.value="";
         form.nombres.focus();
         event.returnValue=false;
@@ -302,45 +302,47 @@ function nombres_persona(form) {
     }
     return valor;
 }
-function apepat_persona(form) {
+
+function numero_doc(form) {
     var valor;
-    if(form.apepat.value==0)	{
-        msj('e_resul','* Ingrese apellido paterno');
-        form.apepat.value="";
-        form.apepat.focus();
+    if(form.numero_doc.value==0)	{
+        msj('e_resul','* Ingrese el DNI');
+        form.numero_doc.value="";
+        form.numero_doc.focus();
         event.returnValue=false;
     //valor = false;return false;
     }
     return valor;
 }
-function apemat_persona(form) {
+function ruc(form) {
     var valor;
-    if(form.apemat.value==0)	{
-        msj('e_resul','* Ingrese apellido materno');
-        form.apemat.value="";
-        form.apemat.focus();
+    if(form.ruc.value==0)	{
+        msj('e_resul','* Ingrese el RUC');
+        form.ruc.value="";
+        form.ruc.focus();
         event.returnValue=false;
     //valor = false;return false;
     }
     return valor;
 }
-function distrito_persona(form) {
+
+function razon_social(form) {
     var valor;
-    if(form.id_distrito.value==0)	{
-        msj('e_resul','* Seleccione el distrito');
-        form.id_distrito.value="";
-        form.id_distrito.focus();
+    if(form.razon_social.value==0)	{
+        msj('e_resul','* Ingrese la razon social');
+        form.razon_social.value="";
+        form.razon_social.focus();
         event.returnValue=false;
     //valor = false;return false;
     }
     return valor;
 }
-function id_tipo_personapersona(form) {
+function id_tipo_doc(form) {
     var valor;
-    if(form.id_tipo_persona.value==0)	{
-        msj('e_resul','* Seleccione el tipo de persona');
-        form.id_tipo_persona.value="";
-        form.id_tipo_persona.focus();
+    if(form.id_tipo_doc.value==0)	{
+        msj('e_resul','* Seleccione el tipo de documento');
+        form.id_tipo_doc.value="";
+        form.id_tipo_doc.focus();
         event.returnValue=false;
     //valor = false;return false;
     }
@@ -349,21 +351,18 @@ function id_tipo_personapersona(form) {
 function PersonaRegistrar()
 {
     var fo =  document.persona;
-    if(id_tipo_personapersona(fo)== false){
+    
+                 
+    if(numero_doc(fo)== false){
         return false;
-    }             
-    if(distrito_persona(fo)== false){
+    }                          
+      
+    if(id_tipo_doc(fo)== false){
         return false;
-    }             
-    if(apemat_persona(fo)== false){
+    }
+    if(nombres(fo)== false){
         return false;
-    }             
-    if(apepat_persona(fo)== false){
-        return false;
-    }             
-    if(nombres_persona(fo)== false){
-        return false;
-    }             
+    }
 }
 
 /**    PROVEEDOR  **********************************************/

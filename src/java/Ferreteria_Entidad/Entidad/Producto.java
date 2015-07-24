@@ -2,7 +2,7 @@ package Ferreteria_Entidad.Entidad;
 
 public class Producto {
 
-
+     private int nro;
      private String id_producto="";
      private String codigo;
      private String nombre="";
@@ -16,7 +16,7 @@ public class Producto {
      private String id_marca="";
      private String id_ubicacion="";
      private String descripcion;
-     private String buscar="";
+     
 
     public Producto() {
     }
@@ -125,12 +125,12 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getBuscar() {
-        return buscar;
+    public int getNro() {
+        return nro;
     }
 
-    public void setBuscar(String buscar) {
-        this.buscar = buscar;
+    public void setNro(int nro) {
+        this.nro = nro;
     }
 
     

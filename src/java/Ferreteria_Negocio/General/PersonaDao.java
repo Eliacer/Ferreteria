@@ -2,8 +2,6 @@
 package Ferreteria_Negocio.General;
 
 
-
-import Ferreteria_Entidad.Entidad.CatCliente;
 import Ferreteria_Entidad.Entidad.Cliente;
 import Ferreteria_Entidad.Entidad.Persona;
 import Ferreteria_Entidad.Entidad.Proveedor;
@@ -18,7 +16,7 @@ import java.util.List;
  */
 public class PersonaDao{
     
-    public boolean InsertarPersona(Persona persona) {
+    public boolean RegistrarPersona(Persona persona) {
         
         Conexion conn = Configuracion.Datos();
         String query = "insert into persona "
@@ -37,7 +35,7 @@ public class PersonaDao{
                     + " '"+ persona.getApellidos()          +"',"
                     + " '"+ persona.getRazon_social()       +"',"
                     + " '"+ persona.getGenero()             +"',"
-                    + " to_date('"+ persona.getFecha_nac()+"','yyyy-mm-dd'),"
+                    + " '"+persona.getFecha_nac()+"',"
                     + " '"+ persona.getTelefono()           +"',"
                     + " '"+ persona.getCelular()            +"',"
                     + " '"+ persona.getId_tipo_doc()        +"',"
@@ -58,22 +56,26 @@ public class PersonaDao{
         }
     }
 
-    public List<Persona> ListarPersona() {
+    public List<Persona> ReportePersona(Persona p) {
         
         Conexion conn = Configuracion.Datos();
-        String sql = "SELECT id_persona as id,nombres||' '||apellidos ||' '||razon_social as nombres, numero_doc as doc, "
-                   + "to_char(fecha_nac,'dd/mm/yyyy') as fecha, "
-                   + "telefono||' / '||celular as tel, direccion, estado FROM persona order by fecha_nac desc";
+        String sql = "SELECT id_persona,nombres,apellidos,razon_social,to_char(fecha_nac,'dd/mm/yyyy')as fecha_nac,telefono,celular,numero_doc "
+                + "FROM persona where upper(nombres||apellidos||razon_social||fecha_nac||telefono||celular||numero_doc) like upper('%"+p.getBuscar()+"%') order by fecha_nac desc";
         List<Persona> lista = new ArrayList<Persona>();
         Persona persona = null;
+        int nro = 1;
             conn.execQuery(sql);
             while (conn.getNext()) {                
                 persona = new Persona();
-                persona.setId_persona(conn.getCol("id"));
+                persona.setNro(nro++);
+                persona.setId_persona(conn.getCol("id_persona"));
                 persona.setNombres(conn.getCol("nombres"));
-                persona.setFecha_nac(conn.getCol("fecha"));
-                persona.setTelefono(conn.getCol("tel"));
-                persona.setNumero_doc(conn.getCol("doc"));
+                persona.setApellidos(conn.getCol("apellidos"));
+                persona.setRazon_social(conn.getCol("razon_social"));
+                persona.setFecha_nac(conn.getCol("fecha_nac"));
+                persona.setTelefono(conn.getCol("telefono"));
+                persona.setCelular(conn.getCol("celular"));
+                persona.setNumero_doc(conn.getCol("numero_doc"));
                 persona.setDireccion(conn.getCol("direccion"));
                 persona.setEstado(conn.getCol("estado"));
                 lista.add(persona);                
@@ -97,13 +99,14 @@ public class PersonaDao{
                 +"',numero_doc='"+persona.getNumero_doc()
                 +"',ruc='"+persona.getRuc()
                 +"',direccion=initcap('"+persona.getDireccion()
-                +"'),estado='"+persona.getEstado()
+                +"'),estado='1"
                 +"' where id_persona='"+persona.getId_persona()+"'";
        
         try {
             conn.execC(query);
             conn.Commit();
             conn.Close(1, 1, 1); 
+            System.out.println(query);
             return true;
         } catch (Exception e) {
             conn.RollBack();
@@ -284,11 +287,10 @@ public class PersonaDao{
         
         Conexion conn = Configuracion.Datos();
         String sql = "select * from persona where id_persona='"+persona.getId_persona()+"'";
-        Persona per = null;
-            
+          
             conn.execQuery(sql);
-            conn.getCol(sql);
-            per= new Persona();
+            conn.getNext();
+            Persona per= new Persona();
             per.setId_persona(conn.getCol("id_persona"));
             per.setNombres(conn.getCol("nombres"));
             per.setRazon_social(conn.getCol("razon_social"));
@@ -346,24 +348,6 @@ public class PersonaDao{
             }
         conn.Close(1, 1, 1);
         return lista;
-    }
-
-    public List<CatCliente> ListarCatCliente() {
-        
-        Conexion conn = Configuracion.Datos();
-        String sql = "select id_categoria,initcap(nombre) as nombre, dcto from cat_cliente ";
-        List<CatCliente> lista = new ArrayList<CatCliente>();
-        CatCliente catc= null;
-            conn.execQuery(sql);
-            while (conn.getNext()) {                    
-                catc = new CatCliente();              
-                catc.setIdCategoria(conn.getCol("id_categoria"));
-                catc.setNombre(conn.getCol("nombre")); 
-                catc.setDescuento(Double.parseDouble(conn.getCol("dcto")));
-                lista.add(catc);   
-            }  
-        conn.Close(1, 1, 1);
-        return lista; 
     }
 
     public List<Persona> ListarCliente() {

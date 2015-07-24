@@ -22,15 +22,15 @@ public class UsuarioDao{
         String COMANDO = "select count(*) valor, "
                 + "  id_usuario, login, password "
                 + "  from usuario where  "
-                + " upper(login) = upper('" + usuario.getLogin() + "') AND ESTADO='1' "
-                + " and upper(password) = upper('" + usuario.getPassword() + "') "
+                + " upper(login) = upper('"+usuario.getLogin()+"') AND ESTADO='1' "
+                + " and upper(password) = upper('"+usuario.getPassword()+"') "
                 + "  group by id_usuario, login, password";
         System.out.print(COMANDO);
         cx.execQuery(COMANDO);
         cx.getNext();
         if (cx.getCol("valor").equals("1")) {
             Map session = ActionContext.getContext().getSession();
-            session.put("usuario", "Usuario: " + cx.getCol("usuario"));
+            session.put("usuario", "Usuario: " + cx.getCol("login"));
             session.put("id_usuario", cx.getCol("id_usuario"));
             cx.Close(1, 1, 1);
             return true;

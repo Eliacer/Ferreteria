@@ -8,9 +8,12 @@ package Ferreteria_Controler;
 
 import Ferreteria_Entidad.Entidad.CatCliente;
 import Ferreteria_Entidad.Entidad.Persona;
+import Ferreteria_Entidad.Entidad.TipoDocumento;
 import Ferreteria_Entidad.Entidad.Usuario;
 import Ferreteria_Negocio.General.PersonaDao;
 import Ferreteria_Negocio.General.UsuarioDao;
+import Ferreteria_Negocio.General.UtilitariosDao;
+import com.opensymphony.xwork2.ModelDriven;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,23 +21,32 @@ import java.util.List;
  *
  * @author Eliacer Fernandez
  */
-public class PersonaControler {
+public class PersonaControler implements ModelDriven<Persona>{
     
     Persona persona = new Persona();
     CatCliente catCliente = new CatCliente();
     Usuario usuario = new Usuario();
+    TipoDocumento tipoDocumento = new TipoDocumento();
     PersonaDao personaDao;
     UsuarioDao usuarioDao;
+    UtilitariosDao utilitariosDao;
     List<Persona> ReportePersonas = new ArrayList<Persona>();
     List<Persona> ReporteUsuarios = new ArrayList<Persona>();
     List<CatCliente> ReporteCatClientes = new ArrayList<CatCliente>();
+    List<TipoDocumento> ReporteTipoDocumento = new ArrayList<TipoDocumento>();
     String sms = "", result = "", window="";
 
+    @Override
+    public Persona getModel() {
+        return persona;
+    }
+    
     public PersonaControler() {
         personaDao = new PersonaDao();
         usuarioDao = new UsuarioDao();
+        utilitariosDao = new UtilitariosDao();
     }  
-    
+
     public Persona getPersona() {
         return persona;
     }
@@ -59,12 +71,12 @@ public class PersonaControler {
         this.usuario = usuario;
     }
 
-    public PersonaDao getPersonaDao() {
-        return personaDao;
+    public TipoDocumento getTipoDocumento() {
+        return tipoDocumento;
     }
 
-    public void setPersonaDao(PersonaDao personaDao) {
-        this.personaDao = personaDao;
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     public UsuarioDao getUsuarioDao() {
@@ -73,6 +85,14 @@ public class PersonaControler {
 
     public void setUsuarioDao(UsuarioDao usuarioDao) {
         this.usuarioDao = usuarioDao;
+    }
+
+    public List<Persona> getReportePersonas() {
+        return ReportePersonas;
+    }
+
+    public void setReportePersonas(List<Persona> ReportePersonas) {
+        this.ReportePersonas = ReportePersonas;
     }
 
     public List<Persona> getReporteUsuarios() {
@@ -89,6 +109,14 @@ public class PersonaControler {
 
     public void setReporteCatClientes(List<CatCliente> ReporteCatClientes) {
         this.ReporteCatClientes = ReporteCatClientes;
+    }
+
+    public List<TipoDocumento> getReporteTipoDocumento() {
+        return ReporteTipoDocumento;
+    }
+
+    public void setReporteTipoDocumento(List<TipoDocumento> ReporteTipoDocumento) {
+        this.ReporteTipoDocumento = ReporteTipoDocumento;
     }
 
     public String getSms() {
@@ -114,12 +142,14 @@ public class PersonaControler {
     public void setWindow(String window) {
         this.window = window;
     }
+
+    
     
     //Metodos
     
-    public String ReportePersonas() {
+    public String Reporte() {
         sms = "ver";
-        ReportePersonas = personaDao.ListarPersona();
+        ReportePersonas = personaDao.ReportePersona(persona);
         return "fin";
     }
     public String ReporteUsuarios() {
@@ -128,43 +158,45 @@ public class PersonaControler {
         return "fin";
     }
 
-    public String nuevaPersona() {
+    public String NuevaPersona() {
         sms = "nueva";
-        
+        ReporteTipoDocumento = utilitariosDao.ReporteTipoDocumento();
         return "fin";
     }
 
-    public String editarPersona() {
+    public String EditarPersona() {
         sms = "editar";
+        ReporteTipoDocumento = utilitariosDao.ReporteTipoDocumento();
         persona = personaDao.ObtenerPersonaId(persona);
         return "fin";
     }
 
-    public String registrarPersona() {
+    public String RegistrarPersona() {
         sms = "ver";
-        if (personaDao.InsertarPersona(persona)) {
+        if (personaDao.RegistrarPersona(persona)) {
             result = " * Los datos fueron registrados.";
         } else {
             window = "ver";
             result = "**** Error al registrar la persona, porque hay datos que coinciden: Dni o Ruc";
         }
-        ReportePersonas = personaDao.ListarPersona();
+        ReportePersonas = personaDao.ReportePersona(persona);
         return "fin";
     }
 
-    public String actualizarPersona() {
+    public String ActualizarPersona() {
         sms = "ver";
         if (personaDao.UpdatePersona(persona)) {
+            window = "ver";
             result = " * Los datos fueron actualizados.";
         } else {
             window = "ver";
             result = "**** Error al actualizar la persona, porque faltaron datos obligatorios o hay datos que coinciden: Dni o Ruc";
         }
-        ReportePersonas = personaDao.ListarPersona();
+        ReportePersonas = personaDao.ReportePersona(persona);
         return "fin";
     }
 
-    public String eliminarPersona() {
+    public String EliminarPersona() {
         sms = "ver";
         if (personaDao.DeletePersona(persona)) {
             result = "La persona fue eliminada.";
@@ -172,7 +204,7 @@ public class PersonaControler {
             window = "ver";
             result = "**** Error: No se puede eliminar esta persona, porque es cliente o usuario del sistema.";
         }
-        ReportePersonas = personaDao.ListarPersona();
+        ReportePersonas = personaDao.ReportePersona(persona);
         return "fin";
     }
 
@@ -200,5 +232,6 @@ public class PersonaControler {
        usuarioDao.CerrarSesion();
        return "fin";
      }
+
     
 }
