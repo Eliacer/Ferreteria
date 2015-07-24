@@ -1,0 +1,89 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: Eliacer Fernandez -->
+ 
+<struts>
+    <package name="begining" extends="struts-default">
+        <action name="Inicio" class="Ferreteria_Controler.PersonaControler" method="Comprobar_sesion">
+            <result name="fin">menu.jsp</result>
+            <result name="malfin">index.jsp</result>
+        </action>
+        <action name="finally">
+            <result>Login.jsp</result>
+        </action>
+       
+    </package>
+    <package name="ferreteria" extends="struts-default">
+        
+        <!-- Logeo-->
+        <action name="Logeo" class="Ferreteria_Controler.PersonaControler" method="Logeo">
+            <result name="menu">menu.jsp</result>
+            <result name="login">index.jsp</result>
+        </action>
+        <action name="CerrarSesion" class="Ferreteria_Controler.PersonaControler" method="CerrarSesion">
+            <result name="fin">index.jsp</result>
+        </action>
+        
+        <!-- Categoria de productos-->
+        <action name="Categoria" class="Ferreteria_Controler.UtilitariosControler" method="Reporte">
+            <result name="fin">categoria.jsp</result>
+        </action>
+        <action name="NuevaCategoria" class="Ferreteria_Controler.UtilitariosControler" method="NuevaCategoria">
+            <result name="fin">categoria.jsp</result>
+        </action>
+        <action name="AgregarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="AgregarCategoria">
+            <result name="fin">categoria.jsp</result>
+        </action>
+        <action name="EliminarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="EliminarCategoria">
+            <result name="fin">categoria.jsp</result>
+        </action>
+        <action name="EditarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="EditarCategoria">
+            <result name="fin">categoria.jsp</result>
+        </action>
+        <action name="ActualizarCategoria" class="Ferreteria_Controler.UtilitariosControler" method="ActualizarCategoria">
+            <result name="fin">categoria.jsp</result>
+        </action>
+        
+        <!-- Categoria de clientes-->
+        <action name="CatCliente" class="Ferreteria_Controler.UtilitariosControler" method="Reporte">
+            <result name="fin">CatCliente.jsp</result>
+        </action>
+        <action name="NuevaCatCliente" class="Ferreteria_Controler.UtilitariosControler" method="NuevaCatCliente">
+            <result name="fin">CatCliente.jsp</result>
+        </action>
+        <action name="AgregarCatCliente" class="Ferreteria_Controler.UtilitariosControler" method="AgregarCatCliente">
+            <result name="fin">CatCliente.jsp</result>
+        </action>
+        <action name="EliminarCatCliente" class="Ferreteria_Controler.UtilitariosControler" method="EliminarCatCliente">
+            <result name="fin">CatCliente.jsp</result>
+        </action>
+        <action name="EditarCatCliente" class="Ferreteria_Controler.UtilitariosControler" method="EditarCatCliente">
+            <result name="fin">CatCliente.jsp</result>
+        </action>
+        <action name="ActualizarCatCliente" class="Ferreteria_Controler.UtilitariosControler" method="ActualizarCatCliente">
+            <result name="fin">CatCliente.jsp</result>
+        </action>
+        
+        <!-- Producto-->
+        <action name="Producto" class="Ferreteria_Controler.ProductoControler" method="Reporte">
+            <result name="fin">producto.jsp</result>
+        </action>
+        <action name="NuevoProducto" class="Ferreteria_Controler.ProductoControler" method="NuevoProducto">
+            <result name="fin">producto.jsp</result>
+        </action>
+        <action name="AgregarProducto" class="Ferreteria_Controler.ProductoControler" method="AgregarProducto">
+            <result name="fin">producto.jsp</result>
+        </action>
+        <action name="EliminarProducto" class="Ferreteria_Controler.ProductoControler" method="EliminarProducto">
+            <result name="fin">producto.jsp</result>
+        </action>
+        <action name="EditarProducto" class="Ferreteria_Controler.ProductoControler" method="EditarProducto">
+            <result name="fin">producto.jsp</result>
+        </action>
+        <action name="ActualizarProducto" class="Ferreteria_Controler.ProductoControler" method="ActualizarProducto">
+            <result name="fin">producto.jsp</result>
+        </action>
+    </package>
+</struts>

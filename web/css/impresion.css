@@ -1,0 +1,227 @@
+BODY  {
+	color : #822c56;
+	font : normal 9pt Arial, Helvetica, sans-serif;
+}
+
+TABLE  {
+	font : normal 9pt Arial, Helvetica, sans-serif;
+}
+
+TD  {
+	font : normal 9pt Arial, Helvetica, sans-serif;
+        color:Black;
+	
+}
+
+TH  {
+	background : white ; 
+	color : Black;
+	border : 1px solid Black ;
+	font : 9pt Arial, Helvetica, sans-serif;
+	padding : 1px;
+
+}
+
+
+A  {
+	color : #003399;
+	text-decoration : none;
+	font-size : 10pt;
+	font-family : Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+}
+
+A:Hover  {
+	color : #660033;
+	text-decoration : none;
+	font-size : 10pt;
+	font-family : Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+}
+
+H1  {
+	font-size : 16pt;
+	font-family : Arial;
+}
+
+H2  {
+	font-size : 12pt;
+	font-family : Arial;
+}
+
+
+
+.head {
+	font-size: 08pt;
+	background:#822c56;
+	color: #fbe6ca;
+	text-align : center;
+	font-style : normal;
+}
+
+/*tab*/
+.tabberlive .tabbertabhide {
+ display:none;
+}
+.tabber {
+
+
+}
+.tabberlive {
+ margin-top:1em;
+}
+
+ul.tabbernav
+{
+ margin:0;
+ padding: 3px 0;
+ border-bottom: 1px solid #4A95C9;
+}
+
+ul.tabbernav li
+{
+ list-style: none;
+ margin: 0;
+ display: inline;
+}
+
+ul.tabbernav li a
+{
+	padding: 3px 0.5em;
+	margin-left: 3px;
+	border: 1px solid #4A95C9;
+	border-bottom: none;
+	background: #DDE1EE;
+	text-decoration: none;
+}
+
+ul.tabbernav li a:hover
+{
+	background: #99BFF7;
+	border-color: Navy;
+}
+
+ul.tabbernav li.tabberactive a
+{
+ background-color: #fff;
+ border-bottom: 1px solid #fff;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{
+	background-color: #fff;
+	background: #E5EEF9;
+	border-bottom: 1px solid white;
+}
+.tabberlive .tabbertab {
+ padding:5px;
+ border:1px solid #aaa;
+ border-top:0;
+}
+
+/* If desired, hide the heading since a heading is provided by the tab */
+.tabberlive .tabbertab h2 {
+ display:none;
+}
+.tabberlive .tabbertab h3 {
+ display:none;
+}
+
+/* Example of using an ID to set different styles for the tabs on the page */
+.tabberlive#tab1 {
+}
+.tabberlive#tab2 {
+}
+.tabberlive#tab2 .tabbertab {
+ height:200px;
+ overflow:auto;
+
+}
+/*fin tab*/
+
+table.reporte {
+	background-color: #FFFFFF;
+	/*PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px; */
+	border: 1px solid #000000;
+	border-collapse: collapse;
+        font : normal 9pt Arial, Helvetica, sans-serif;
+}
+
+table.reporte th {
+	PADDING-RIGHT: 3px;
+	PADDING-LEFT: 3px;
+	font-weight: bold;
+	font-size: 9px;
+	border: 1px solid #000000;
+        font : normal 9pt Arial, Helvetica, sans-serif;
+}
+table.reporte td {
+	PADDING-RIGHT: 3px;
+	PADDING-LEFT: 3px;
+	/*PADDING-TOP: 2px;
+	PADDING-BOTTOM: 2px;*/
+	border: 1px solid #000000;
+        font : normal 9pt Arial, Helvetica, sans-serif;
+}
+
+/*reporte 2*/
+table.reporte2 {
+	background-color: #FFFFFF;
+	/*PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px; */
+	border: 0px solid #000000;
+	border-collapse: collapse;
+        font : normal 9pt Arial, Helvetica, sans-serif;
+}
+
+table.reporte2 th {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	font-weight: bold;
+	font-size: 9px;
+	border: 0px solid #000000;
+        font : normal 9pt Arial, Helvetica, sans-serif;
+}
+table.reporte2 td {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	/*PADDING-TOP: 2px;
+	PADDING-BOTTOM: 2px;*/
+	border: 0px solid #000000;
+        font : normal 9pt Arial, Helvetica, sans-serif;
+}
+/*reporte 3*/
+table.reporte3 {
+	background-color: #FFFFFF;
+	/*PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px; */
+	border: 1px solid #000000;
+	border-collapse: collapse;
+        font : normal 8pt Arial, Helvetica, sans-serif;
+}
+
+table.reporte3 th {
+	PADDING-RIGHT: 3px;
+	PADDING-LEFT: 3px;
+	font-weight: bold;
+	font-size: 9px;
+	border: 1px solid #000000;
+        font : normal 8pt Arial, Helvetica, sans-serif;
+}
+table.reporte3 td {
+	PADDING-RIGHT: 3px;
+	PADDING-LEFT: 3px;
+	/*PADDING-TOP: 2px;
+	PADDING-BOTTOM: 2px;*/
+	border: 1px solid #000000;
+        font : normal 8pt Arial, Helvetica, sans-serif;
+}

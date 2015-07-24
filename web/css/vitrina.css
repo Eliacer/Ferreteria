@@ -1,0 +1,319 @@
+BODY  {
+    font : normal 10pt Arial, Helvetica, sans-serif;
+    background:#eee;
+}
+
+TABLE  {
+    font : normal 9pt Arial, Helvetica, sans-serif;
+}
+TABLE.borde  {
+    font : normal 10pt Arial, Helvetica, sans-serif;
+    border : 1px solid White ;
+}
+table.reporte  {
+	border : 1px solid #CCCC99;
+	 border-radius:8px;
+        -moz-border-radius:8px;
+        -webkit-border-radius:8px;
+}
+TH.subtitulo 
+{
+    background : #B6D561;
+    color :black;
+    text-align : center;
+    border : 1px solid silver ;
+    font : bold 10pt Arial, Helvetica, sans-serif;
+    padding : 1px;
+
+}
+.borde_doblee  {
+
+    font : normal 10pt Arial, Helvetica, sans-serif;
+    border : 1px solid silver ;
+    background-color: rgb(231,255,181);
+    text-align: left;
+}
+fieldset.login
+{
+    width: 350px;
+    font : normal bold 10pt Arial, Helvetica, sans-serif;
+    border : 1px solid yellow;
+    background: url(login.jpg);
+    color:green;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+}
+.log
+{
+    text-align: left;
+}
+TABLE.borde_triple  {
+    font : normal 10pt Arial, Helvetica, sans-serif;
+    border : 3px solid White ;
+}
+
+TD  {
+    font : normal 9pt Arial, Helvetica, sans-serif;
+    color:Black;
+
+}
+TD.login  {
+    font : bold 10pt Arial, Helvetica, sans-serif;
+    color:green;
+
+}
+
+TH  {
+    background: #669900;
+    color: white;
+    text-align : center;
+    border : 0px solid #669900;
+    font : bold 9pt Arial, Helvetica, sans-serif;
+    padding : 1px;
+
+}
+IMAGE{
+    color : #003399;
+    text-decoration : none;
+    font-size : 10pt;
+    font-family : Arial, Helvetica, sans-serif;
+    font-weight : normal;
+    font-style : normal;
+}
+IMAGE:Hover
+{
+    color : #660033;
+    text-decoration : none;
+    font-size : 11pt;
+    font-family : Arial, Helvetica, sans-serif;
+    font-weight : normal;
+    font-style : normal;
+
+}
+
+A  {
+    color : #000099;
+    text-decoration : none;
+    font-size : 10pt;
+    font-family : Arial, Helvetica, sans-serif;
+    font-weight : normal;
+    font-style : normal;
+}
+A.menu  {
+    color : #FAFAD2;
+    text-decoration : none;
+    font-size : 10pt;
+    font-family : Arial, Helvetica, sans-serif;
+    font-weight : normal;
+    font-style : normal;
+}
+
+A:Hover  {
+    color : #009900;
+    text-decoration : underline;
+    font-size : 10pt;
+    font-family : Arial, Helvetica, sans-serif;
+    font-weight : normal;
+    font-style : normal;
+}
+
+H1  {
+    font-size : 16pt;
+    font-family : Arial;
+}
+
+H2  {
+    font-size : 12pt;
+    font-family : Arial;
+}
+
+.head {
+	font-size: 08pt;
+	background: #6B8E23;/* url(head.jpg);#339900;*/
+	color: white;
+	font-style : normal;
+}
+.head1 {
+	font-size: 03pt;
+        background: url(imag11.jpg);/*#6B8E23;*/
+	color: black;
+	text-align :center;
+	font-style : normal;
+}
+.blue {
+
+    text-align : left;
+    color: blue;
+    font : bold 10pt Arial, Helvetica, sans-serif;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+.in {
+    cursor: pointer;
+    background: #B6D561;
+    color:white;
+    font : bold 10pt Arial, Helvetica, sans-serif;
+}
+
+/*tab*/
+.tabberlive .tabbertabhide {
+    display:none;
+}
+.tabber {
+
+
+}
+.tabberlive {
+    margin-top:1em;
+}
+
+ul.tabbernav
+{
+    margin:0;
+    padding: 3px 0;
+    border-bottom: 1px solid #4A95C9;
+}
+
+ul.tabbernav li
+{
+    list-style: none;
+    margin: 0;
+    display: inline;
+}
+
+ul.tabbernav li a
+{
+    padding: 3px 0.5em;
+    margin-left: 3px;
+    border: 1px solid #4A95C9;
+    border-bottom: none;
+    background: #DDE1EE;
+    text-decoration: none;
+}
+
+ul.tabbernav li a:hover
+{
+    background: #99BFF7;
+    border-color: Navy;
+}
+
+ul.tabbernav li.tabberactive a
+{
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{
+    background-color: #fff;
+    background: #E5EEF9;
+    border-bottom: 1px solid white;
+}
+.tabberlive .tabbertab {
+    padding:5px;
+    border:1px solid #aaa;
+    border-top:0;
+}
+
+/* If desired, hide the heading since a heading is provided by the tab */
+.tabberlive .tabbertab h2 {
+    display:none;
+}
+.tabberlive .tabbertab h3 {
+    display:none;
+}
+
+/* Example of using an ID to set different styles for the tabs on the page */
+.tabberlive#tab1 {
+}
+.tabberlive#tab2 {
+}
+.tabberlive#tab2 .tabbertab {
+    height:200px;
+    overflow:auto;
+
+}
+
+.error {
+    display: inline;
+    width: auto;
+    padding-left: 2px;
+    color: #6B8E23;
+    font-size : 10pt;
+    font-style: italic;
+}
+.error_login {
+    display: inline;
+    width: auto;
+    padding-left: 8px;
+    color: red;
+    font-size : 8pt;
+    font-style: italic;
+    clear: both;
+}
+
+.falta {
+    display: inline;
+    width: auto;
+    color: crimson;
+    font-size : 9pt;
+    font-style: italic;
+    clear: both;
+}
+
+.bordes{
+    border-radius:8px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+}
+select{
+    cursor: pointer;
+}
+.bord {
+       border : 1px solid #CCCC99;
+	border-radius:4px;
+        -moz-border-radius:4px;
+        -webkit-border-radius:3px;
+}
+img {
+    border : 0px solid white;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+}
+img:Hover {
+    border-radius:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+}
+
+/*fin tab*/
+table.alinear
+{
+    text-align : left;
+    background: #F5F5DC;
+    border : 1px solid silver ;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+table.alinear_titulo
+{   
+    border : 1px solid silver ;
+    text-align : left;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+.select
+{
+    width:320px;
+     border : 1px solid #CCCC99;
+	border-radius:4px;
+        -moz-border-radius:4px;
+        -webkit-border-radius:3px;
+        cursor: pointer;
+}
+

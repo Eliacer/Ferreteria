@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+VARIABLES PARA LA CONEXION A LA BASE DE DATOS
+-->
+
+<conexiones>
+	
+	<conexion id="sistemasupeu">
+		
+		<administradorBD>ORACLE</administradorBD>
+		
+		<ipHost>localhost</ipHost>
+		
+		<puerto>1521</puerto>
+		
+		<baseDatos>orcl</baseDatos>
+		
+		<usuario>SYSTEMASUPEU</usuario>
+		
+		<clave>SYSTEMASUPEU</clave>
+	
+	</conexion>
+	
+	<conexion id="ACADEMICO">
+		
+		<administradorBD>POSTGRES</administradorBD>
+		
+		<ipHost>localhost</ipHost>
+		
+		<puerto>1521</puerto>
+		
+		<baseDatos>orcl</baseDatos>
+		
+		<usuario>gps</usuario>
+		
+		<clave>123</clave>
+	
+	</conexion>
+	
+	<conexion id="">
+		
+	<administradorBD>MYSQL</administradorBD>
+		
+		<ipHost>localhost</ipHost>
+		
+		<puerto>1521</puerto>
+		
+		<baseDatos>orcl</baseDatos>
+		
+		<usuario>gps</usuario>
+		
+		<clave>123</clave>
+	
+	</conexion>
+
+</conexiones>
